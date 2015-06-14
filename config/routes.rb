@@ -6,9 +6,20 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get '/items' => 'items#index'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
+  get '/items' => 'items#create'
+
+  get '/items/new' => 'items#new'
+
+  # Ｑ：updateアクションへのルートを作成しよう
+  get '/items/:id/edit' => 'items#edit'
+
+  get '/items/:id' => 'items#show'
+
+  patch '/items/:id' => 'items#update'
+
+  get '/items/:id/delete' => 'items#destroy'  # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
